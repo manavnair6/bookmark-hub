@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Bookmark Hub
+This app was built to help users save website links and titles in one place. It uses a database to store data and Google for signing in.
 
-## Getting Started
+What the app does
+Google Login: The app uses Google OAuth so users can sign in without a password.
 
-First, run the development server:
+Saving Links: Users can enter a website title and a URL to save it to their list.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Real-time Updates: If the app is open in two different tabs, adding a link in one tab makes it show up in the other tab instantly.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Private Data: Security rules were added so that users only see the links they saved, not anyone else's.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Delete Function: There is a trash icon to remove links from the list.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Problems that were fixed
+A few issues came up during the build, but they were all solved:
 
-## Learn More
+Cookie Error: The login was failing with a "cookieStore" error. This happened because Next.js 15 needs the code to "await" the cookies. The code was updated to fix this.
 
-To learn more about Next.js, take a look at the following resources:
+Wrong Folder: The login was showing a 404 error at first. The "callback" folder was in the wrong spot, so it was moved to the src/app folder to make it work.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Tools used
+Next.js: For the main app structure.
 
-## Deploy on Vercel
+Supabase: For the database, login, and real-time updates.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Tailwind CSS: For the dark theme and layout.
