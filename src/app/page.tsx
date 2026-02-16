@@ -1,4 +1,5 @@
 "use client"
+export const dynamic = "force-dynamic";
 import { useEffect, useState } from 'react'
 import { getSb } from '@/utils/sb'
 import { Trash2, ExternalLink, Plus, Bookmark } from 'lucide-react'
